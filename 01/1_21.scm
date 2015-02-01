@@ -4,7 +4,7 @@
   (smallest-divisor-iter 2 n))
 
 (define (remainder a n)
-  (- a (* n (truncate (/ a n)))))
+  (- a (* n (floor (/ a n)))))
 
 (define (smallest-divisor-iter x n)
   (cond ((> (square x) n) n)
