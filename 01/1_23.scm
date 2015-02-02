@@ -2,11 +2,16 @@
 
 (define (divides? a b) (= (remainder b a) 0))
 
+(define (next-divisor n)
+  (cond
+    ((= n 2) 3)
+    (else (+ n 2))))
+
 (define (find-divisor n test-divisor)
   (cond
     ((> (square test-divisor) n) n)
     ((divides? test-divisor n) test-divisor)
-    (else (find-divisor n (+ test-divisor 1)))))
+    (else (find-divisor n (next-divisor test-divisor)))))
 
 (define (smallest-divisor n) (find-divisor n 2))
 
@@ -33,4 +38,4 @@
   (let ((left (if (timed-prime-test from) (- count 1) count)))
     (if (and (< from to) (> left 0)) (search-for-primes (+ from 1) to left))))
 
-(search-for-primes 1000000000000 1000000020000 5)
+(search-for-primes 100000000 100020000 5)
