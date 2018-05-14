@@ -2,12 +2,6 @@
   (display x)
   (newline))
 
-;(define (even? x)
-;  (= (/ x 2) 0))
-
-;(define (odd? x)
-;  (= (/ x 2) 1))
-
 (define (append list1 item)
   (if (null? list1)
     (list item)
