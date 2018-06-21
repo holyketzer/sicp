@@ -28,10 +28,10 @@
               (set-cdr! subtable
                         (cons (cons key-2 value)
                               (cdr subtable)))))
-              (set-cdr! local-table
-                        (cons (list key-1
-                                    (cons key-2 value))
-                              (cdr local-table)))))
+          (set-cdr! local-table
+                    (cons (list key-1
+                                (cons key-2 value))
+                          (cdr local-table)))))
       'ok)
 
     (define (dispatch m)
